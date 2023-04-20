@@ -18,6 +18,7 @@ const mouseTrackCoordinate = (isStartTrack) => {
       follower = document.getElementById('aura'),
       links = document.getElementById('a')
 
+
   let mouseX = 0,
       mouseY = 0,
       posX = 0,
