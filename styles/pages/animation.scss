@@ -1,0 +1,29 @@
+
+
+.animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 32px;
+  &__block {
+    min-height: 100vh;
+    width: 100%;
+  }
+  .block-1 {
+    background: orange;
+  }
+  .block-2 {
+    background: #1f39d7;
+  }
+  .block-3 {
+    background: #08f511;
+  }
+  .block-4 {
+    background: #8317da;
+  }
+  .block-5 {
+    background: orange;
+  }
+}

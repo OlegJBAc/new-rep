@@ -1,6 +1,10 @@
 <template>
   <div class="page-main">
-    <h1 class="page-title">Main page</h1>
+    <div class="content">
+      <h1 class="page-title">Main page</h1>
+      <p>Blabla<b>bla</b>bla</p>
+    </div>
+
     <div id="aura"></div>
   </div>
 </template>
@@ -13,7 +17,6 @@ const mouseTrackCoordinate = (isStartTrack) => {
 
   const aura = document.querySelector('#aura')
 
-  console.log(aura)
   aura.style.position = 'absolute'
 
   pageMain.addEventListener('mousemove', (e) => {

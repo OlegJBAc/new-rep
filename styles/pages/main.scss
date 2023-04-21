@@ -5,15 +5,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 
-  h1 {
-    font-size: 40x;
+  .content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+
+    h1 {
+      font-size: 40x;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+     margin-top: 10px;
+    }
   }
-  // cursor.
 
   #cursor, #aura {
     position: absolute;
