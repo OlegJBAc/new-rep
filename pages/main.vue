@@ -18,8 +18,7 @@ const mouseTrackCoordinate = (isStartTrack) => {
   const aura = document.querySelector('#aura')
 
   aura.style.position = 'absolute'
-
-  pageMain.addEventListener('mousemove', (e) => {
+  const trackMouse = (e) => {
     e.stopPropagation()
     const rect = e.currentTarget.getBoundingClientRect()
 
@@ -29,7 +28,15 @@ const mouseTrackCoordinate = (isStartTrack) => {
     aura.style.top = `${y - 100}px`
     aura.style.left = `${x - 100}px`
 
-  })
+  }
+
+  if(isStartTrack) {
+    pageMain.addEventListener('mousemove', trackMouse)
+  }else {
+    pageMain.removeEventListener('mousemove', trackMouse)
+
+  }
+
 }
 
 export default {
@@ -38,9 +45,11 @@ export default {
     mouseTrackCoordinate(true)
   },
   unmounted() {
-    // mouseTrackCoordinate(false)
+    mouseTrackCoordinate(false)
   },
-  methods: {},
+  methods: {
+
+  },
 }
 
 </script>
