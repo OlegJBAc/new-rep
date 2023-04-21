@@ -34,7 +34,6 @@ const mouseTrackCoordinate = (isStartTrack) => {
     pageMain.addEventListener('mousemove', trackMouse)
   }else {
     pageMain.removeEventListener('mousemove', trackMouse)
-
   }
 
 }

@@ -13,21 +13,20 @@
 <script>
 import {gsap} from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+
+gsap.registerPlugin(ScrollTrigger)
+
 export default {
   name: "animation",
   mounted() {
-    document.body.addEventListener('DOMContentLoaded', () => {
-      gsap.to(".box", {
-        scrollTrigger: ".block-3", // start the animation when ".box" enters the viewport (once)
-        x: 500
-      })
+    gsap.to('.block-3', {
+      scrollTrigger: '.block-3',
+      background: 'black',
+      y: -200,
+      duration: 2,
     })
+
   },
-
 }
+
 </script>
-
-<style scoped>
-
-</style>
