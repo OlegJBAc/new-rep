@@ -1,7 +1,6 @@
 <template>
   <div class="page-main">
-    <h1>Main page</h1>
-    <div id="cursor"></div>
+    <h1 class="page-title">Main page</h1>
     <div id="aura"></div>
   </div>
 </template>
@@ -9,39 +8,24 @@
 <script>
 
 const mouseTrackCoordinate = (isStartTrack) => {
-  const body = document.querySelector('body')
-  body.addEventListener('mousemove', e => {
-    let clientX = e.pageX,
-        clientY = e.pageY
-  })
-  const cursor = document.getElementById('cursor'),
-      follower = document.getElementById('aura'),
-      links = document.getElementById('a')
+  const pageMain = document.querySelector('.page-main')
+  const pageTitle = document.querySelector('.page-title')
 
+  const aura = document.querySelector('#aura')
 
-  let mouseX = 0,
-      mouseY = 0,
-      posX = 0,
-      posY = 0
+  console.log(aura)
+  aura.style.position = 'absolute'
 
-  function mouseCoords(e) {
-    mouseX = e.pageX
-    mouseY = e.pageY
-  }
-  gsap.to({}, .01, {
-    repeat: -1,
-    onRepeat: () => {
-      posX += (mouseX - posX) / 5
-      posY += (mouseY - posY) / 5
+  pageMain.addEventListener('mousemove', (e) => {
+    e.stopPropagation()
+    const rect = e.currentTarget.getBoundingClientRect()
 
-      gsap.set(follower, {
-        css: {
-          left: posX - 23,
-          top: posY - 23
-        }
-      })
+    const y = e.clientY - rect.top
+    const x = e.clientX - rect.left
 
-    }
+    aura.style.top = `${y - 100}px`
+    aura.style.left = `${x - 100}px`
+
   })
 }
 
