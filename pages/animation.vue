@@ -20,7 +20,10 @@ export default {
   name: "animation",
   mounted() {
     gsap.to('.block-3', {
-      scrollTrigger: '.block-3',
+      scrollTrigger: {
+        trigger: '.block-3',
+        toggleActions: 'restart pause reverse pause',
+      },
       background: 'black',
       y: -200,
       duration: 2,
